@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Demon List officielle de votre GDPS — classement, records et soumissions.">
+  <title>GDPS Demon List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><div class="logo">GD</div><div><strong id="siteName">GDPS Demon List</strong><span id="siteTagline">Official level rankings</span></div></div>
+    <nav>
+      <a class="active" href="index.html">List</a>
+      <a href="#rules">Rules</a>
+      <a href="#team">Team</a>
+      <a class="nav-button" href="#submit">Submit Record</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">GEOMETRY DASH PRIVATE SERVER</p>
+        <h1 id="heroTitle">GDPS Demon List</h1>
+        <p id="heroDescription">The hardest levels on the GDPS, ranked by difficulty.</p>
+        <div class="hero-actions"><a class="primary" href="#list">View the List</a><a class="secondary" href="#submit">Submit a Record</a></div>
+      </div>
+      <div class="hero-badge"><span>LIVE</span><strong id="heroCount">0</strong><small>ranked levels</small></div>
+    </section>
+
+    <section class="stats" id="stats"></section>
+
+    <section class="toolbar" id="list">
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-category="main">Main List</button>
+        <button class="tab" data-category="extended">Extended</button>
+        <button class="tab" data-category="legacy">Legacy</button>
+      </div>
+      <div class="filters"><input id="search" type="search" placeholder="Search a level or creator…"><select id="difficulty"><option value="all">All difficulties</option><option>Extreme Demon</option><option>Insane Demon</option><option>Hard Demon</option><option>Medium Demon</option><option>Easy Demon</option></select></div>
+    </section>
+
+    <div class="content-grid">
+      <section class="level-list" id="levelList"></section>
+      <aside class="details" id="details"><div class="empty"><div class="empty-icon">◈</div><h2>Select a level</h2><p>Choose a level on the left to see its records and information.</p></div></aside>
+    </div>
+
+    <section class="info-section" id="submit">
+      <div class="section-title"><div><p class="eyebrow">RECORDS</p><h2>Submit a record</h2></div></div>
+      <form id="submitForm" class="form-card">
+        <div class="form-grid"><label>Level<select id="submitLevel" required></select></label><label>Player<input id="submitPlayer" required maxlength="30" placeholder="Your GDPS username"></label><label>Progress (%)<input id="submitPercent" type="number" min="1" max="100" required placeholder="100"></label><label>Refresh rate<input id="submitHz" maxlength="20" placeholder="240Hz / Mobile"></label><label class="full">Video URL<input id="submitVideo" type="url" required placeholder="https://youtu.be/..."></label></div>
+        <button class="primary" type="submit">Send Record</button><p class="form-note">This demo form saves submissions in your browser. For a shared public submission system, connect it to a database/backend.</p>
+      </form>
+    </section>
+
+    <section class="two-col" id="rules">
+      <div class="panel"><p class="eyebrow">RULES</p><h2>Record requirements</h2><ul><li>Use the exact level shown on the list.</li><li>No hacks, macros or hidden routes.</li><li>The video must show enough gameplay to verify the completion.</li><li>Use source audio or clear clicks/taps when required by staff.</li><li>Staff may reject unclear, edited or unverifiable footage.</li></ul></div>
+      <div class="panel" id="team"><p class="eyebrow">STAFF</p><h2>List team</h2><div class="team" id="teamList"></div><a class="secondary block" href="staff.html">Open Staff Panel</a></div>
+    </section>
+  </main>
+
+  <footer><span>GDPS Demon List</span><span>Inspired by the GDOpenList project • MIT license retained in this package.</span></footer>
+  <script src="assets/data.js"></script><script src="assets/app.js"></script>
+</body>
+</html>
